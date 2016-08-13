@@ -11,12 +11,14 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Employees</a></li>
+        <li routerLinkActive="active">
+          <a routerLink="/employees">Employees</a>
+        </li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
 
 <div class="container">
-	<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </div><!-- /.container -->
