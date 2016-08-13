@@ -19,3 +19,12 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Models\Employee::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        'surname' => $faker->lastName,
+        'email' => $faker->safeEmail,
+        'birthdate' => $faker->dateTimeBetween($startDate = '-50 years', $endDate = '-30 years', $timezone = date_default_timezone_get())
+    ];
+});

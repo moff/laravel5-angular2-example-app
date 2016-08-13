@@ -1,9 +1,15 @@
 <?php
-
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
+    private $tables = array(
+        'employees'
+    );
+    
     /**
      * Run the database seeds.
      *
@@ -11,6 +17,30 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        Model::unguard();
+
+        switch (App::environment()) {
+            case 'local':
+                $this->cleanDB();
+
+                $this->call(EmployeesTableSeeder::class);
+
+                break;
+            default:
+                break;
+        }
+
+        Model::reguard();
+    }
+    
+    private function cleanDB()
+    {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
+        foreach ($this->tables as $table) {
+            DB::table($table)->truncate();
+        }
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }
