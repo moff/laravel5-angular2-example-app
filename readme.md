@@ -2,8 +2,14 @@
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](http://opensource.org/licenses/MIT)
 
-This is an example of application based on Laravel5 and Angular2.
+This is an example of application based on Laravel 5.2 and Angular 2.0.0-rc.5
 It is based on [Laravel 5 + Angular 2 boilerplate](https://github.com/moff/laravel5-angular2)
+
+What you can learn from it:
+- how to setup REST API back end
+- how to use Transformers for JSON-responses
+- how to get data via AJAX from REST back end
+- how to use Angular router
 
 ## Requirements
 
