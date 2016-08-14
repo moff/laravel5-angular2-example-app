@@ -16,4 +16,15 @@ class EmployeesController extends Controller
     {
         return Employee::all();
     }
+    
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        return Employee::findOrFail($id);
+    }
 }

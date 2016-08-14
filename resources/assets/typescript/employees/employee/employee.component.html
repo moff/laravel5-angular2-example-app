@@ -1,1 +1,22 @@
-<p>Employee component</p>
+<h1>{{ employee.name }} {{employee.surname}}</h1>
+<form>
+  <div class="form-group">
+    <label>Date of birth</label>
+    <input type="text"
+        class="form-control"
+        [(ngModel)]='employee.birthdate'
+        name="birthdate"
+        placeholder="Date of birth">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email"
+        class="form-control"
+        [(ngModel)]='employee.email'
+        name="email"
+        placeholder="Email">
+  </div>
+  <button type="submit" class="btn btn-success">Save</button>
+</form>
+<hr>
+<button class="btn btn-default" routerLink='/employees'>Go to Employee list</button>
