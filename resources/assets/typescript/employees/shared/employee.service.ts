@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class EmployeeService {
     
-    private _employeesUrl: string = 'employees';
+    private _employeesUrl: string = 'api/employees';
     
     constructor(private _http: Http) {}
     
