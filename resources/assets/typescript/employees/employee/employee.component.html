@@ -1,5 +1,21 @@
-<h1>{{ employee.name }} {{employee.surname}}</h1>
+<h1>Employee details</h1>
 <form>
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text"
+        class="form-control"
+        [(ngModel)]='employee.name'
+        name="name"
+        placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label>Surname</label>
+    <input type="text"
+        class="form-control"
+        [(ngModel)]='employee.surname'
+        name="surname"
+        placeholder="Surname">
+  </div>
   <div class="form-group">
     <label>Date of birth</label>
     <input type="text"
@@ -16,7 +32,7 @@
         name="email"
         placeholder="Email">
   </div>
-  <button type="submit" class="btn btn-success">Save</button>
+  <button (click)='saveEmployee()' type="submit" class="btn btn-success">Save</button>
 </form>
 <hr>
 <button class="btn btn-default" routerLink='/employees'>Go to Employee list</button>

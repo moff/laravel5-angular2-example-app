@@ -15,7 +15,8 @@ export class EmployeeComponent implements OnInit, OnDestroy {
     errorMessage: string;
     
     constructor(private _employeeService: EmployeeService,
-                private _route: ActivatedRoute) {}
+                private _route: ActivatedRoute,
+                private _router: Router) {}
     
     ngOnInit(): void {
         this._sub = this._route.params.subscribe(params => {
@@ -30,5 +31,19 @@ export class EmployeeComponent implements OnInit, OnDestroy {
     
     ngOnDestroy(): void {
         this._sub.unsubscribe();
+    }
+    
+    saveEmployee() {
+        this._employeeService.updateEmployee(this.employee)
+            .subscribe(
+                employee => {
+                    this.employee = employee;
+                    this._router.navigate(['/employees']);
+                },
+                error => {
+                    this.errorMessage = <any>error;
+                    console.error('employee is not saved')
+                }
+            );
     }
 }
