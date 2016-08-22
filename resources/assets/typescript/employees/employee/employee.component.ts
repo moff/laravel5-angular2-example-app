@@ -11,6 +11,7 @@ export class EmployeeComponent implements OnInit, OnDestroy {
     
     private _sub: Subscription;
     
+    isLoading: boolean;
     employee: IEmployee = <IEmployee>{};
     errorMessage: string;
     
@@ -34,11 +35,14 @@ export class EmployeeComponent implements OnInit, OnDestroy {
     }
     
     saveEmployee() {
+        this.isLoading = true;
         this._employeeService.updateEmployee(this.employee)
             .subscribe(
                 employee => {
                     this.employee = employee;
-                    this._router.navigate(['/employees']);
+                    setTimeout(() => {
+                        this._router.navigate(['/employees']);
+                    }, 2000);
                 },
                 error => {
                     this.errorMessage = <any>error;

@@ -32,7 +32,7 @@
         name="email"
         placeholder="Email">
   </div>
-  <button (click)='saveEmployee()' type="submit" class="btn btn-success">Save</button>
+  <button [ladda]='isLoading' (click)='saveEmployee()' type="submit" class="btn btn-success">Save</button>
 </form>
 <hr>
 <button class="btn btn-default" routerLink='/employees'>Go to Employee list</button>

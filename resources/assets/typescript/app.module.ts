@@ -9,12 +9,15 @@ import { EmployeeService } from './employees/shared/employee.service';
 import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 
+import { LaddaModule } from 'angular2-ladda';
+
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
-        routing
+        routing,
+        LaddaModule
     ],
     providers: [
         appRoutingProviders,
