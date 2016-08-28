@@ -10,6 +10,7 @@ import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 
 import { LaddaModule } from 'angular2-ladda';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { LaddaModule } from 'angular2-ladda';
         FormsModule,
         HttpModule,
         routing,
-        LaddaModule
+        LaddaModule,
+        FlashMessagesModule
     ],
     providers: [
         appRoutingProviders,
