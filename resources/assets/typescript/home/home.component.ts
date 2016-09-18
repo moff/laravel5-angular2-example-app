@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
     
     ngOnInit() {
         // 1st parameter is a flash message text
-        // 2nd parameter is a CSS class for flash message div
-        this._flashMessagesService.show('We are in about component!', 'alert-success');
+        // 2nd parameter is an object with additional parameters
+        this._flashMessagesService.show('We are in about component!', { cssClass: 'alert-success', timeout: 2000 });
     }
 }
